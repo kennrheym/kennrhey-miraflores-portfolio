@@ -5,6 +5,11 @@ import MainHeader from '@/components/layout/main-header.vue'
 <template>
   <div>
     <main-header></main-header>
+    <main>
+      <div style="background-color: bisque;">
+
+      </div>
+    </main>
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtWelcome /> -->
   </div>
