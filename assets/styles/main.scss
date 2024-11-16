@@ -1,0 +1,8 @@
+$app-black: #363636;
+$app-background--black: #121212;
+
+@mixin flex--all-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
