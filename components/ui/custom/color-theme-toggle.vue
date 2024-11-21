@@ -13,7 +13,7 @@ const isDarkTheme = ref(true)
 </template>
 <style lang="scss" scoped>
     #theme-color-toggle-container {
-        @include flex--all-centered;
+        @include main.flex--all-centered;
         justify-content: flex-start;
         background-color: aliceblue;
         width:  60px;

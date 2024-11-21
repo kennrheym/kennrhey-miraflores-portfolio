@@ -21,11 +21,11 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 <style scoped lang="scss">
     header {
         color: white;
-        background: $app-background--black;
+        background: main.$app-background--black;
         height: 50px;
         & > div {
             height: 34px;
-            @include flex--all-centered; 
+            @include main.flex--all-centered; 
             padding: 8px;
         }
     }
