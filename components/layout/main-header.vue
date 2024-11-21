@@ -4,7 +4,7 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 </script>
 
 <template>
-    <header>
+    <header class="fixed--top" style="width: 100%;">
         <div style="justify-content: space-between; padding-inline: 16px;">
             <div>
                 12
@@ -19,9 +19,14 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 </template>
 
 <style scoped lang="scss">
+    .fixed--top {
+        position: fixed; 
+        top: 0; 
+    }
+
     header {
         color: white;
-        background: main.$app-background--black;
+        background-color: main.$app-background--black;
         height: 56px !important;
         & > div {
             height: 34px;
