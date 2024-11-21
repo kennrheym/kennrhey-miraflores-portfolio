@@ -16,7 +16,7 @@ const isDarkTheme = ref(true)
         @include main.flex--all-centered;
         justify-content: flex-start;
         background-color: aliceblue;
-        width:  48px;
+        width:  42px;
         height: 20px;
         border-radius: 12px;
         &.light-mode:hover > div.ball{
