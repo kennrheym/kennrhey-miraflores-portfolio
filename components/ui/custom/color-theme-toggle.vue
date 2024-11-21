@@ -16,20 +16,20 @@ const isDarkTheme = ref(true)
         @include main.flex--all-centered;
         justify-content: flex-start;
         background-color: aliceblue;
-        width:  60px;
-        height: 24px;
+        width:  48px;
+        height: 20px;
         border-radius: 12px;
         &.light-mode:hover > div.ball{
             transition: border-color 0.1s;
             border-radius: 14px;
-            border: solid #FFE484 5px;
-            margin-inline: -2px;
+            border: solid rgba(255, 228, 132, 0.5) 5px;
+            margin-inline: -4px;
         }
         &.dark-mode:hover > div.ball{
             transition: border-color 0.1s;
             border-radius: 14px;
             border: solid #484849 5px;
-            margin-inline: -2px;
+            margin-inline: -4px;
         }
     }
 
@@ -52,7 +52,7 @@ const isDarkTheme = ref(true)
     }
 
     .ball {
-        margin-inline: 3px;
+        margin-inline: 1px;
         height: 18px;
         width: 18px;
         background-color: orange;
