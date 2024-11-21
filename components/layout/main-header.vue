@@ -5,12 +5,12 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 
 <template>
     <header>
-        <div style="justify-content: space-between;">
+        <div style="justify-content: space-between; padding-inline: 16px;">
             <div>
                 12
             </div>
 
-            <div style="margin-right: 50px;">
+            <div>
                 <color-theme-toggle>
                 </color-theme-toggle>
             </div>
@@ -22,7 +22,7 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
     header {
         color: white;
         background: main.$app-background--black;
-        height: 50px;
+        height: 56px !important;
         & > div {
             height: 34px;
             @include main.flex--all-centered; 

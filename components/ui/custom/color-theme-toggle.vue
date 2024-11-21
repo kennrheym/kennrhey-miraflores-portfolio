@@ -19,21 +19,35 @@ const isDarkTheme = ref(true)
         width:  60px;
         height: 24px;
         border-radius: 12px;
-        transition: justify-content 0.2s;
+        &.light-mode:hover > div.ball{
+            transition: border-color 0.1s;
+            border-radius: 14px;
+            border: solid #FFE484 5px;
+            margin-inline: -2px;
+        }
+        &.dark-mode:hover > div.ball{
+            transition: border-color 0.1s;
+            border-radius: 14px;
+            border: solid #484849 5px;
+            margin-inline: -2px;
+        }
     }
 
     .light-mode {
+        transition: justify-content 1s;
+        justify-content: flex-start !important;
         background-color: white;
-        & > .ball {
-            color: orange;
+        & > div.ball {
+            background-color: #FFCC33;
         }
     }
 
     .dark-mode {
+        transition: justify-content 1s;
         justify-content: flex-end !important;
         background-color: rgb(114, 110, 110) !important;
         & > div.ball {
-            background-color: black !important;
+            background-color: #151211 !important;
         }
     }
 
@@ -43,5 +57,10 @@ const isDarkTheme = ref(true)
         width: 18px;
         background-color: orange;
         border-radius: 9px;
+        // &:hover {
+            // border-radius: 12px;
+            // border: solid blue 4px;
+            // margin-inline: 0;
+        // }
     }
 </style>
