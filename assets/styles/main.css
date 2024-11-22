@@ -1,6 +1,5 @@
 body {
     margin: 0 !important;
-    background-color: antiquewhite;
     & * {
         color: #363636;
     }

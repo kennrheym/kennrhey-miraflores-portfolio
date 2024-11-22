@@ -16,8 +16,8 @@ const isDarkTheme = ref(true)
         @include main.flex--all-centered;
         justify-content: flex-start;
         background-color: aliceblue;
-        width:  42px;
-        height: 20px;
+        width:  36px;
+        height: 14px;
         border-radius: 12px;
         &.light-mode:hover > div.ball{
             transition: border-color 0.1s;
@@ -53,10 +53,10 @@ const isDarkTheme = ref(true)
 
     .ball {
         margin-inline: 1px;
-        height: 18px;
-        width: 18px;
+        height: 12px;
+        width: 12px;
         background-color: orange;
-        border-radius: 9px;
+        border-radius: 6px;
         // &:hover {
             // border-radius: 12px;
             // border: solid blue 4px;

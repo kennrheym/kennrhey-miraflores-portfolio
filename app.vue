@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import MainHeader from '@/components/layout/main-header.vue'
+import FixedMainHeader from '@/components/layout/main-header.vue'
 </script>
 
 <template>
   <div>
-    <main-header></main-header>
+    <fixed-main-header></fixed-main-header>
     <main>
-      <div style="background-color: bisque;">
-        <div style="background-color: red; height: 200px;"></div>
+      <div style="background-color: #121212;" >
+        <!-- <div style="background-color: red; height: 200px;"></div>
         <div style="background-color: blue; height: 200px;"></div>
         <div style="background-color: red; height: 200px;"></div>
         <div style="background-color: blue; height: 200px;"></div>
         <div style="background-color: red; height: 200px;"></div>
-        <div style="background-color: blue; height: 200px;"></div>
+        <div style="background-color: blue; height: 200px;"></div> -->
 
       </div>
     </main>
@@ -21,5 +21,9 @@ import MainHeader from '@/components/layout/main-header.vue'
   </div>
 </template>
 
-<style>
+<style lang="scss">
+  html {
+    background-color: main.$app-light-mode--background-color;
+  }
+
 </style>

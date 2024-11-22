@@ -6,8 +6,8 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 <template>
     <header class="fixed--top" style="width: 100%;">
         <div style="justify-content: space-between; padding-inline: 16px;">
-            <div>
-                12
+            <div id="container--icon-menu" class="clickable">
+                <img src="/assets/svg/icon--menu.svg" />
             </div>
 
             <div>
@@ -22,6 +22,19 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
     .fixed--top {
         position: fixed; 
         top: 0; 
+    }
+
+    #container--icon-menu {
+        height: 36px;
+        width: 36px;
+        border-radius: 18px;
+        // opacity: 0.1;
+        &:hover {
+            background-color: rgba($color: #FFF, $alpha: 0.5);
+
+        }
+        @include main.flex--all-centered; 
+
     }
 
     header {
