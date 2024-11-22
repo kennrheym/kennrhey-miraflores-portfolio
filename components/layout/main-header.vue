@@ -30,7 +30,7 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
         border-radius: 18px;
         // opacity: 0.1;
         &:hover {
-            background-color: rgba($color: #FFF, $alpha: 0.5);
+            background-color: rgba($color: #FFF, $alpha: 0.15);
 
         }
         @include main.flex--all-centered; 
