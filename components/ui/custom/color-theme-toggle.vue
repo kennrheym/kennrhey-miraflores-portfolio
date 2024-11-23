@@ -22,28 +22,34 @@ const isDarkTheme = ref(true)
         width:  36px;
         height: 14px;
         border-radius: 12px;
-        &.light-mode:hover div.ball-container{
-            @include main.flex--all-centered;
-            transition: background-color 0.3s;
-            border-radius: 10px;
-            height: 20px;
-            width: 20px;
-            background-color: rgba($color: #FFCC33, $alpha: 0.5);
-            margin-inline: -3px;
+        &.light-mode {
+            border: 1px solid #FFCC33;
+            &:hover div.ball-container{
+                @include main.flex--all-centered;
+                transition: background-color 0.3s;
+                border-radius: 10px;
+                height: 20px;
+                width: 20px;
+                background-color: rgba($color: #FFCC33, $alpha: 0.5);
+                margin-inline: -3px;
+            }
         }
-        &.dark-mode:hover div.ball-container{
-            @include main.flex--all-centered;
-            transition: background-color 0.3s;
-            border-radius: 10px;
-            height: 20px;
-            width: 20px;
-            background-color: rgba($color: #0f2591, $alpha: 0.5);
-            margin-inline: -3px;
+        &.dark-mode {
+            border: 1px solid #0f2591;
+            &:hover div.ball-container{
+                @include main.flex--all-centered;
+                transition: background-color 0.3s;
+                border-radius: 10px;
+                height: 20px;
+                width: 20px;
+                background-color: rgba($color: #0f2591, $alpha: 0.5);
+                margin-inline: -3px;
+            }
         }
     }
 
     .light-mode {
-        transition: justify-content 1s;
+        transition: justify-content 0.3s;
         justify-content: flex-start !important;
         background-color: white;
         & div.ball {
@@ -52,9 +58,9 @@ const isDarkTheme = ref(true)
     }
 
     .dark-mode {
-        transition: justify-content 1s;
+        transition: justify-content 0.3s;
         justify-content: flex-end !important;
-        background-color: #000 !important;
+        background-color: #121212 !important;
         & div.ball {
             background-color: #0f2591 !important;
         }
