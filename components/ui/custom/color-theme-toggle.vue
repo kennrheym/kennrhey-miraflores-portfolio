@@ -23,7 +23,7 @@ const isDarkTheme = ref(true)
         height: 14px;
         border-radius: 12px;
         &.light-mode {
-            border: 1px solid #FFCC33;
+            border: 1.5px solid rgba($color: #FFCC33, $alpha: 0.5);
             &:hover div.ball-container{
                 @include main.flex--all-centered;
                 transition: background-color 0.3s;
@@ -35,14 +35,14 @@ const isDarkTheme = ref(true)
             }
         }
         &.dark-mode {
-            border: 1px solid #0f2591;
+            border: 1.5px solid rgba($color: #8a99e7, $alpha: 0.5);
             &:hover div.ball-container{
                 @include main.flex--all-centered;
                 transition: background-color 0.3s;
                 border-radius: 10px;
                 height: 20px;
                 width: 20px;
-                background-color: rgba($color: #0f2591, $alpha: 0.5);
+                background-color: rgba($color: #8a99e7, $alpha: 0.5);
                 margin-inline: -3px;
             }
         }
@@ -62,7 +62,7 @@ const isDarkTheme = ref(true)
         justify-content: flex-end !important;
         background-color: #121212 !important;
         & div.ball {
-            background-color: #0f2591 !important;
+            background-color: #8a99e7 !important;
         }
     }
 
