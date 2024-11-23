@@ -1,14 +1,27 @@
 <script setup lang="ts">
+// import { ref } from 'vue';
 import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 
+enum EColorTheme {
+    LIGHT,
+    DARK
+}
+
+const colorTheme = ref("")
 </script>
 
 <template>
     <header class="fixed--top" style="width: 100%;">
         <div style="justify-content: space-between; padding-inline: 16px;">
-            <div id="container--icon-menu" class="clickable">
-                <img src="/assets/svg/icon--menu.svg" />
+            <div id="header--start">
+                <div id="container--icon-menu" class="clickable">
+                    <img src="/assets/svg/icon--menu.svg" />
+                </div>
+                <div>
+                    KENNRHEY MIRAFLORES
+                </div>
             </div>
+
 
             <div>
                 <color-theme-toggle>
@@ -19,6 +32,9 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 </template>
 
 <style scoped lang="scss">
+    #header--start {
+        @include main.flex--all-centered; 
+    }
     .fixed--top {
         position: fixed; 
         top: 0; 
@@ -28,10 +44,8 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
         height: 36px;
         width: 36px;
         border-radius: 18px;
-        // opacity: 0.1;
         &:hover {
             background-color: rgba($color: #FFF, $alpha: 0.15);
-
         }
         @include main.flex--all-centered; 
 
@@ -41,8 +55,9 @@ import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
         color: white;
         background-color: main.$app-background--black;
         height: 56px !important;
+        box-shadow: 0.1px 0.1px #e5dede;
         & > div {
-            height: 34px;
+            height: 40px;
             @include main.flex--all-centered; 
             padding: 8px;
         }

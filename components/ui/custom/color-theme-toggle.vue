@@ -5,9 +5,12 @@ const isDarkTheme = ref(true)
 </script>
 <template>
     <div id="theme-color-toggle-container" class="clickable" :class="[ isDarkTheme ? 'dark-mode' : 'light-mode']" @click="isDarkTheme = !isDarkTheme">
-        <div class="ball">
+        <div class="ball-container">
+            <div class="ball">
 
+            </div>
         </div>
+
     </div>
 
 </template>
@@ -19,17 +22,23 @@ const isDarkTheme = ref(true)
         width:  36px;
         height: 14px;
         border-radius: 12px;
-        &.light-mode:hover > div.ball{
-            transition: border-color 0.1s;
-            border-radius: 14px;
-            border: solid rgba(255, 228, 132, 0.5) 5px;
-            margin-inline: -4px;
+        &.light-mode:hover div.ball-container{
+            @include main.flex--all-centered;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: rgba($color: #FFCC33, $alpha: 0.5);
+            margin-inline: -3px;
         }
-        &.dark-mode:hover > div.ball{
-            transition: border-color 0.1s;
-            border-radius: 14px;
-            border: solid #484849 5px;
-            margin-inline: -4px;
+        &.dark-mode:hover div.ball-container{
+            @include main.flex--all-centered;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: rgba($color: #0f2591, $alpha: 0.5);
+            margin-inline: -3px;
         }
     }
 
@@ -37,7 +46,7 @@ const isDarkTheme = ref(true)
         transition: justify-content 1s;
         justify-content: flex-start !important;
         background-color: white;
-        & > div.ball {
+        & div.ball {
             background-color: #FFCC33;
         }
     }
@@ -45,9 +54,9 @@ const isDarkTheme = ref(true)
     .dark-mode {
         transition: justify-content 1s;
         justify-content: flex-end !important;
-        background-color: rgb(114, 110, 110) !important;
-        & > div.ball {
-            background-color: #151211 !important;
+        background-color: #000 !important;
+        & div.ball {
+            background-color: #0f2591 !important;
         }
     }
 
@@ -55,7 +64,7 @@ const isDarkTheme = ref(true)
         margin-inline: 1px;
         height: 12px;
         width: 12px;
-        background-color: orange;
+        background-color: #FFCC33;
         border-radius: 6px;
         // &:hover {
             // border-radius: 12px;
