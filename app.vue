@@ -1,56 +1,18 @@
 <script setup lang="ts">
 import FixedMainHeader from '@/components/layout/main-header.vue'
+import MainContent from './components/layout/main-content.vue';
 </script>
 
 <template>
   <div>
     <fixed-main-header></fixed-main-header>
-    <main>
+    <main style="padding-inline: 16px;">
       <div class="flex--all-centered" style="margin-top: 56px;">
         <div style="padding-top: 20px;">
-          <paragraph> Hi, my name is Kennrhey! I'm a full-stack developer</paragraph>
+          <main-content></main-content>
         </div>
-        <div>
-
-          <!-- <div class="test-container">
-            <div class="test" style="background-color: white; height: 20px; width: 20px; border-radius: 10px;">
-              
-            </div>
-          </div> -->
-          <div style="height: 100px;">
-
-          </div>
-          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>          <div style="height: 100px;">
-
-</div>
-        </div>
-
       </div>
     </main>
-    <!-- <NuxtRouteAnnouncer /> -->
-    <!-- <NuxtWelcome /> -->
   </div>
 </template>
 
@@ -75,6 +37,8 @@ import FixedMainHeader from '@/components/layout/main-header.vue'
   }
 
   main {
+    display: flex;
+    align-items: center;
     overflow: auto;
     height: calc(100vh - 56px);
     background-color: transparent;

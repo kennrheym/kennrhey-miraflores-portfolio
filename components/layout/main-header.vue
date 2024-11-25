@@ -17,8 +17,8 @@ const colorTheme = ref("")
                 <div id="container--icon-menu" class="clickable">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
-                <div>
-                    KENNRHEY MIRAFLORES
+                <div style="margin-left: 6px;">
+                    KennM
                 </div>
             </div>
 
