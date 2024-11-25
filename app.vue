@@ -42,7 +42,7 @@ import MainContent from './components/layout/main-content.vue';
     overflow: auto;
     height: calc(100vh - 56px);
     background-color: transparent;
-    background: linear-gradient(0, white, #121212);
+    background: linear-gradient(0, #ebe3db, #121212);
     & > div {
       // background-color: main.$app-dark-mode--background-color;
       background-color: transparent;
