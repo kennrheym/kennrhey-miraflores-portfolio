@@ -13,6 +13,9 @@ import MainContent from './components/layout/main-content.vue';
         </div>
       </div>
     </main>
+    <footer style="height: 36px; position: fixed; bottom: 0; background-color: #121212; width: 100%;">
+      <div style="color: black;">1</div>
+    </footer>
   </div>
 </template>
 
@@ -40,7 +43,8 @@ import MainContent from './components/layout/main-content.vue';
     display: flex;
     align-items: center;
     overflow: auto;
-    height: calc(100vh - 56px);
+    height: 100vh;
+    // height: calc(100vh - 56px);
     background-color: transparent;
     background: linear-gradient(0, #ebe3db, #121212);
     & > div {
