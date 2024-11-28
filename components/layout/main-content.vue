@@ -106,9 +106,13 @@ const carrouselDataCount = ref(cardData.value.length)
         width: 40px;
         border-radius: 20px;
         background-color: aliceblue;
-
+        transition: background-color 0.3s;
         &:hover {
-            background-color: main.$app--color--dull-blue;
+            background-color: main.$app--color--blue;
+            & svg {
+                stroke: #FFF;
+                transition: stroke 0.4s;
+            }
         }
     }
 
