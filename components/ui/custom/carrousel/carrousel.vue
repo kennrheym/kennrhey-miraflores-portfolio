@@ -24,7 +24,7 @@ const changeActiveCardIndex = (nextIndex: number) => {
     if (nextIndex > dataCount.value - 1 || nextIndex < 0) {
         return
     }
-    
+
     activeCardIndex.value = nextIndex
 }
 
@@ -32,7 +32,7 @@ const changeActiveCardIndex = (nextIndex: number) => {
 
 <template>
     <div id="carrousel-container">
-        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex - 1)">
+        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex - 1)" :class="{'arrow--inactive': activeCardIndex <= 0}">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
@@ -41,11 +41,11 @@ const changeActiveCardIndex = (nextIndex: number) => {
             <div style="margin-bottom: 6px;"> {{ cardTitle }} </div>
             <slot name="card"></slot>
             <div id="card-position-circle-container">
-                <div v-for="index in dataCount" class="card-position-circle clickable" :class="{ 'active-card-circle': activeCardIndex == index - 1 }">
+                <div v-for="index in dataCount" class="card-position-circle clickable" :class="{ 'active-card-circle': activeCardIndex == index - 1 }" @click="changeActiveCardIndex(index-1)">
                 </div>
             </div>
         </div>
-        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex + 1)">
+        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex + 1)" :class="{'arrow--inactive': activeCardIndex >= dataCount - 1}">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 6 15 12 9 18"></polyline>
             </svg>
@@ -58,6 +58,11 @@ const changeActiveCardIndex = (nextIndex: number) => {
         @include main.flex--all-centered;
         display: flex;
         flex-direction: row;
+    }
+
+    .arrow--inactive {
+        pointer-events: none !important;
+        opacity: 0.2 !important;
     }
 
     .arrow-container {

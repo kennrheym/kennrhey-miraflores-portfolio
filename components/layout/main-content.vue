@@ -28,7 +28,7 @@ const cardData: Ref<Array<ICardData>> = ref([
         tech: "VueJS, JQuery, Django and PostgreSQL"
     },
     {
-        title: "Full-stack Developer",
+        title: "Junior Developer",
         company: "Pharmaceutical Product Development",
         date: "(Nov. 2022 - Oct. 2024)",
         description: "",
