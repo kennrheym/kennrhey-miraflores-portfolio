@@ -68,6 +68,15 @@ const carrouselDataCount = ref(cardData.value.length)
                         <div> {{ cardData[activeCardIndex].title }} </div>
                         <div> {{ cardData[activeCardIndex].company }} </div>
                         <div> {{ cardData[activeCardIndex].date }} </div>
+                        <div class="details-icon" style="margin-top: 14px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="7" y1="9" x2="17" y2="9"/>
+                                <line x1="7" y1="13" x2="17" y2="13"/>
+                                <line x1="7" y1="17" x2="17" y2="17"/>
+                            </svg>
+                        </div>
+
                         <!-- <div style="margin-top: 20px; font-weight: 400;"> 
                             <div> {{ cardData[activeCardIndex].description }} </div>
                             <div style="margin-top: 5px; font-weight: 400;"> Tech used: {{ `${cardData[activeCardIndex].tech}` }}</div>
@@ -91,6 +100,18 @@ const carrouselDataCount = ref(cardData.value.length)
         }
     }
 
+    .details-icon {
+        @include main.flex--all-centered;
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+        background-color: aliceblue;
+
+        &:hover {
+            background-color: main.$app--color--dull-blue;
+        }
+    }
+
     #main-content-container {
         @include main.flex--all-centered;
         display: flex;
@@ -107,13 +128,12 @@ const carrouselDataCount = ref(cardData.value.length)
         border-radius: 10px;
         height: 200px;
         width: 400px;
-        background-color: #c3f1dc;
+        background-color: main.$app--color--light-green;
         opacity: 1;
         font-size: 14px;
         font-weight: 600;
         & * {
             color: #545459;
-            // font-weight: 600;
         }
     }
 
