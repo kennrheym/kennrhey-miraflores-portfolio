@@ -20,11 +20,19 @@ const cardTitle = defineModel('cardTitle', {
     required: false
 })
 
+const changeActiveCardIndex = (nextIndex: number) => {
+    if (nextIndex > dataCount.value - 1 || nextIndex < 0) {
+        return
+    }
+    
+    activeCardIndex.value = nextIndex
+}
+
 </script>
 
 <template>
     <div id="carrousel-container">
-        <div class="arrow-container clickable">
+        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex - 1)">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
@@ -33,10 +41,11 @@ const cardTitle = defineModel('cardTitle', {
             <div style="margin-bottom: 6px;"> {{ cardTitle }} </div>
             <slot name="card"></slot>
             <div id="card-position-circle-container">
-                <div v-for="index in dataCount" class="card-position-circle clickable"></div>
+                <div v-for="index in dataCount" class="card-position-circle clickable" :class="{ 'active-card-circle': activeCardIndex == index - 1 }">
+                </div>
             </div>
         </div>
-        <div class="arrow-container clickable">
+        <div class="arrow-container clickable" @click="changeActiveCardIndex(activeCardIndex + 1)">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 6 15 12 9 18"></polyline>
             </svg>
@@ -54,8 +63,10 @@ const cardTitle = defineModel('cardTitle', {
     .arrow-container {
         background-color: transparent;
         &:hover {
-            background: #cfe3cd;
+            // background: #cfe3cd;
             & svg {
+                width: 100;
+                height: 100;
                 stroke: #ace5cb;
             }
         }
@@ -76,7 +87,8 @@ const cardTitle = defineModel('cardTitle', {
     }
 
     .active-card-circle {
-        opacity: 1;
+        opacity: 1 !important;
+        background-color: #c3f1dc !important;
     }
 
     .card-position-circle {

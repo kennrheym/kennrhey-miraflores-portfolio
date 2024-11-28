@@ -3,7 +3,7 @@ import Carrousel from '../ui/custom/carrousel/carrousel.vue';
 
 const activeCardIndex = ref(0)
 const cardTitle =  ref("Work Experience")
-const dataCount = ref(4)
+const dataCount = ref(3)
 
 interface ICardData {
     title: String,
@@ -24,14 +24,14 @@ const cardData: Ref<Array<ICardData>> = ref([
     {
         title: "Full-stack Developer",
         company: "Acamp via Miller Development",
-        date: "",
+        date: "(Nov. 2022 - Oct. 2024)",
         description: "",
         tech: "VueJS, JQuery, Django and PostgreSQL"
     },
     {
         title: "Full-stack Developer",
         company: "Pharmaceutical Product Development",
-        date: "",
+        date: "(Nov. 2022 - Oct. 2024)",
         description: "",
         tech: "VueJS, JQuery, Django and PostgreSQL"
     },
@@ -62,7 +62,7 @@ const cardData: Ref<Array<ICardData>> = ref([
         <div style="margin-left: 100px;">
             <carrousel v-model:active-card-index="activeCardIndex" v-model:card-title="cardTitle" v-model:data-count="dataCount">
                 <template #card>
-                    <div class="carrousel-card">
+                    <div class="carrousel-card clickable">
                         <div> {{ cardData[activeCardIndex].title }} </div>
                         <div> {{ cardData[activeCardIndex].company }} </div>
                         <div> {{ cardData[activeCardIndex].date }} </div>
@@ -96,6 +96,7 @@ const cardData: Ref<Array<ICardData>> = ref([
         background-color: #c3f1dc;
         opacity: 1;
         font-size: 14px;
+        font-weight: 600;
         & * {
             color: #545459;
             // font-weight: 600;
