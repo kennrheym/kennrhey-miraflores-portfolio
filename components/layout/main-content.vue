@@ -14,25 +14,25 @@ interface ICardData {
 
 const cardData: Ref<Array<ICardData>> = ref([
     {
-        title: "Full-stack Developer",
+        title: "Full-stack Web Developer",
         company: "Daelibs Workforce Guidance (Australia - remote)",
         date: "(Nov. 2022 - Oct. 2024)",
         description: "Designed and implemented front and backend features/pages for IoT Web App",
-        tech: "VueJS, JQuery, Django and PostgreSQL"
+        tech: "VueJS, JQuery, Django, PostgreSQL"
     },
     {
-        title: "Full-stack Developer",
+        title: "Full-stack Mobile Developer",
         company: "Acamp via Miller Development",
         date: "(Nov. 2022 - Oct. 2024)",
-        description: "",
-        tech: "VueJS, JQuery, Django and PostgreSQL"
+        description: "Implemented features for Acamp and Stellplatz Android Apps",
+        tech: "Kotlin, PHP, PostgreSQL"
     },
     {
-        title: "Junior Developer",
+        title: "Junior Web Developer",
         company: "Pharmaceutical Product Development",
         date: "(Nov. 2022 - Oct. 2024)",
-        description: "",
-        tech: "VueJS, JQuery, Django and PostgreSQL"
+        description: "Developed features for internal web app",
+        tech: "JQuery, ReactJS, Laravel, MySQL"
     },
 ])
 
