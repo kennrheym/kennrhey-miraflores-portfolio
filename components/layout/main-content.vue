@@ -42,7 +42,7 @@ const carrouselDataCount = ref(cardData.value.length)
 
 <template>
     <div id="main-content-container">
-        <div style="margin-left: 6px;">
+        <div style="padding-bottom: 10px;">
             <div style="font-size: 48px;">
                 <div>Hi, my</div>
                 <div>name is <span style="color: #ace5cb">Kennrhey</span></div>
@@ -61,7 +61,7 @@ const carrouselDataCount = ref(cardData.value.length)
                 </div>
             </div>
         </div>
-        <div style="margin-left: 100px;">
+        <div>
             <carrousel v-model:active-card-index="activeCardIndex" v-model:card-title="cardTitle" v-model:data-count="carrouselDataCount">
                 <template #card>
                     <div class="carrousel-card clickable">
@@ -81,10 +81,22 @@ const carrouselDataCount = ref(cardData.value.length)
 </template>
 
 <style lang="scss">
+
+    @media only screen and (max-width: 1100px) {
+        #main-content-container {
+            flex-direction: column !important;
+            & > div {
+                margin-bottom: 50px
+            }
+        }
+    }
+
     #main-content-container {
         @include main.flex--all-centered;
         display: flex;
         flex-direction: row;
+        width: 1100px;
+        justify-content: space-between
     }
 
     .carrousel-card {

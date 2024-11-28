@@ -38,7 +38,7 @@ const changeActiveCardIndex = (nextIndex: number) => {
             </svg>
         </div>
         <div id="carrousel-card-container">
-            <div style="margin-bottom: 6px;"> {{ cardTitle }} </div>
+            <div style="margin-bottom: 6px; font-size: 20px;"> {{ cardTitle }} </div>
             <slot name="card"></slot>
             <div id="card-position-circle-container">
                 <div v-for="index in dataCount" class="card-position-circle clickable" :class="{ 'active-card-circle': activeCardIndex == index - 1 }" @click="changeActiveCardIndex(index-1)">
