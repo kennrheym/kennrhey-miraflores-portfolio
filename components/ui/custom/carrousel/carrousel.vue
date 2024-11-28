@@ -4,7 +4,6 @@ const activeCardIndex = defineModel('activeCardIndex', {
     type: Number,
     default: 0,
     required: true
-
 })
 
 const dataCount = defineModel('dataCount', {

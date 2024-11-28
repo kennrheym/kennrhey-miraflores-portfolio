@@ -4,7 +4,7 @@
 <template>
     <footer style="">
         <div>
-            <img src="/assets/png/tech/HTML5.png">
+            <img src="/assets/png/tech/HTML5.png" style="margin-left: 0;">
             <img src="/assets/png/tech/CSS3.png">
             <img src="/assets/png/tech/Sass.png">
 
@@ -27,13 +27,13 @@
 
             <div class="icon-separator"></div>
 
-            <img src="/assets/png/tech/Java.png">
+            <img src="/assets/png/tech/Java.png" alt="Java">
             <img src="/assets/png/tech/Kotlin.png">
 
             <div class="icon-separator"></div>
 
             <img src="/assets/png/tech/MySQL.png">
-            <img src="/assets/png/tech/PostgresSQL.png">
+            <img src="/assets/png/tech/PostgresSQL.png" style="margin-right: 0;">
 
         </div>
     </footer>
@@ -51,6 +51,7 @@
         box-shadow: 0.1px 0.1px #e5dede;
         & > div {
             @include main.flex--all-centered;
+            justify-content: space-between;
             height: inherit;
             width: 1100px;
         }
