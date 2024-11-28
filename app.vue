@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FixedMainHeader from '@/components/layout/main-header.vue'
 import MainContent from './components/layout/main-content.vue';
+import MainFooter from './components/layout/main-footer.vue';
 </script>
 
 <template>
@@ -13,9 +14,7 @@ import MainContent from './components/layout/main-content.vue';
         </div>
       </div>
     </main>
-    <footer style="height: 36px; position: fixed; bottom: 0; background-color: #121212; width: 100%;">
-      <div style="color: black;">1</div>
-    </footer>
+    <main-footer></main-footer>
   </div>
 </template>
 
