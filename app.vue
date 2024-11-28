@@ -6,7 +6,7 @@ import MainContent from './components/layout/main-content.vue';
 <template>
   <div>
     <fixed-main-header></fixed-main-header>
-    <main style="padding-inline: 16px;">
+    <main style="padding-inline: 16px; justify-content: center;">
       <div class="flex--all-centered" style="margin-top: 56px;">
         <div style="padding-top: 20px;">
           <main-content></main-content>
