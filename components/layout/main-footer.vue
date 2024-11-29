@@ -27,7 +27,6 @@
 
             <div class="icon-separator"></div>
 
-            <img src="/assets/png/tech/Java.png" alt="Java">
             <img src="/assets/png/tech/Kotlin.png">
 
             <div class="icon-separator"></div>

@@ -64,9 +64,12 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
     }
 
     .content-container {
+        // border-radius: 6px;
+        // background-color: #ffe1e1; 
         border-radius: 6px;
-        background-color: #ffe1e1; 
-
+        background-color: #ffecec;
+        border: 0.5px solid #f3d1d1;
+        margin-bottom: 5px;
     }
 
     .container--icon-arrow {
@@ -88,7 +91,7 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
         padding-block: 4px; 
         padding-inline: 14px;
         // border-radius: 6px;
-        margin-top: 10px;
+        // margin-top: 10px;
     }
 
     .content-body {
