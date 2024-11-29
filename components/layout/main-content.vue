@@ -90,9 +90,10 @@ const openCardModal = () => {
                     </div>
                 </template>
             </carrousel>
+            <work-experience-card-modal v-model:is-card-modal-visible="isCardModalVisible">
+            </work-experience-card-modal>
         </div>
-        <work-experience-card-modal v-model:is-card-modal-visible="isCardModalVisible">
-        </work-experience-card-modal>
+
     </div>
 
 </template>
