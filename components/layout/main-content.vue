@@ -24,14 +24,14 @@ const cardData: Ref<Array<ICardData>> = ref([
     },
     {
         title: "Full-stack Mobile Developer",
-        company: "Acamp via Miller Development",
+        company: "Acamp via Miller Development (Sweden - remote)",
         date: "(Jul. 2021 - Nov. 2022)",
         description: "Implemented features for Acamp and Stellplatz Android Apps",
         tech: ["Kotlin", "PHP", "PostgreSQL"]
     },
     {
         title: "Junior Web Developer",
-        company: "Pharmaceutical Product Development",
+        company: "Pharmaceutical Product Development (US - remote)",
         date: "(Jan. 2020 - Jul. 2021)",
         description: "Developed features for internal web app",
         tech: ["ReactJS", "JQuery", "Laravel", "MySQL"]

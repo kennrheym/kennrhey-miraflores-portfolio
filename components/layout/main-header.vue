@@ -1,11 +1,14 @@
 <script setup lang="ts">
 // import { ref } from 'vue';
 import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
+import MenuDrawer from './menu-drawer.vue';
 
 enum EColorTheme {
     LIGHT,
     DARK
 }
+
+const isMenuOpen = ref(false)
 
 const colorTheme = ref("")
 </script>
@@ -14,20 +17,19 @@ const colorTheme = ref("")
     <header class="fixed--top" style="width: 100%;">
         <div style="justify-content: space-between; padding-inline: 16px;">
             <div id="header--start">
-                <div id="container--icon-menu" class="clickable">
+                <div id="container--icon-menu" class="clickable" @click="isMenuOpen=true">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
                 <div style="margin-left: 6px;">
                     KennM
                 </div>
             </div>
-
-
             <div>
                 <color-theme-toggle>
                 </color-theme-toggle>
             </div>
         </div>
+        <menu-drawer v-model:is-open="isMenuOpen"></menu-drawer>
     </header>
 </template>
 
