@@ -7,6 +7,9 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
     required: true
 })
 
+const isContributionDetailsCollapsed = ref(true)
+const isTechDetailsCollapsed = ref(true)
+
 </script>
 <template>
     <modal v-if="isCardModalVisible" v-model:is-modal-visible="isCardModalVisible">
@@ -15,37 +18,42 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
                 <div class="modal-content" style="height: fit-content; width: 760px; padding: 20px;">
                     <div class="content-container">
                         <div class="content-header"> 
-                            <div class="container--icon-arrow clickable">
-                                <img src="/assets/svg/icon--up-arrow.svg" />
+                            <div class="container--icon-arrow clickable" @click="isContributionDetailsCollapsed=!isContributionDetailsCollapsed">
+                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : isContributionDetailsCollapsed}"/>
+                                <!-- <img v-show="isContributionDetailsCollapsed" src="/assets/svg/icon--down-arrow.svg" /> -->
                             </div>
                             Responsibilities / Contributions:
                         </div>
-                        <div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-
+                        <transition name="fade">
+                            <div v-if="!isContributionDetailsCollapsed" class="content-body">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </transition>
                     </div>
                     
                     <div class="content-container">
                         <div class="content-header"> 
-                            <div class="container--icon-arrow clickable">
-                                <img src="/assets/svg/icon--up-arrow.svg" />
+                            <div class="container--icon-arrow clickable"  @click="isTechDetailsCollapsed=!isTechDetailsCollapsed">
+                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : isTechDetailsCollapsed}"/>
                             </div>
                             Tech Used:
                         </div>
-                        <div class="content-body">
-                            <div>Test</div>
-                            <div>Test</div>
-                            <div>Test</div>
-                            <div>Test</div>
-                            <div>Test</div>
-                            <div>Test</div>
-                        </div>
+                        <transition name="fade">
+                            <div v-if="!isTechDetailsCollapsed" class="content-body">
+                                <div>Test</div>
+                                <div>Test</div>
+                                <div>Test</div>
+                                <div>Test</div>
+                                <div>Test</div>
+                                <div>Test</div>
+                            </div>
+                        </transition>
+
                     </div>
                 </div>
             </div>
@@ -53,14 +61,29 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
     </modal>
 </template>
 <style lang='scss' scoped>
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.2s ease;
+    }
+    
+    .fade-enter-from,
+    .fade-leave-to {
+      opacity: 0;
+    }
+
     .modal-content {
         & * {
-            color: main.$app-black;
+            color: main.$app--font-color--black;
             font-weight: 600;
         }
         & ul li {
             font-size: 14px;
         }
+    }
+
+    .img--inverted {
+        transform: rotate(180deg) !important;
     }
 
     .content-container {
@@ -79,8 +102,14 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
         width: 26px;
         border-radius: 13px;
         background-color: #f9f5f5;
+        border: 0.5px solid #f9f5f5;
+
         & svg {
             stroke: #ffe1e1;
+        }
+
+        &:hover {
+            border: 0.5px solid #ffe1e1;
         }
     }
 
