@@ -67,8 +67,8 @@ const isCardModalVisible = defineModel('isCardModalVisible', {
         // border-radius: 6px;
         // background-color: #ffe1e1; 
         border-radius: 6px;
-        background-color: #ffecec;
-        border: 0.5px solid #f3d1d1;
+        background-color: #fcfffe;
+        border: 0.5px solid #fcfffe;
         margin-bottom: 5px;
     }
 

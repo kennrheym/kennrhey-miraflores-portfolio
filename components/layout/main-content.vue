@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Carrousel from '../ui/custom/carrousel/carrousel.vue';
-import workExperienceCardModal from './main-content/work-experience-card-modal.vue';
+import WorkExperienceCardModal from './main-content/work-experience-card-modal.vue';
 
 const activeCardIndex = ref(0)
 const cardTitle =  ref("Work Experience")
@@ -11,7 +11,7 @@ interface ICardData {
     description: String,
     company: String,
     date: String,
-    tech: String
+    tech: Array<String>
 }
 
 const cardData: Ref<Array<ICardData>> = ref([
@@ -20,21 +20,21 @@ const cardData: Ref<Array<ICardData>> = ref([
         company: "Daelibs Workforce Guidance (Australia - remote)",
         date: "(Nov. 2022 - Oct. 2024)",
         description: "Designed and implemented front and backend features/pages for IoT Web App",
-        tech: "VueJS, JQuery, Django, PostgreSQL"
+        tech: ["VueJS", "JQuery", "Django", "PostgreSQL"]
     },
     {
         title: "Full-stack Mobile Developer",
         company: "Acamp via Miller Development",
-        date: "(Nov. 2022 - Oct. 2024)",
+        date: "(Jul. 2021 - Nov. 2022)",
         description: "Implemented features for Acamp and Stellplatz Android Apps",
-        tech: "Kotlin, PHP, PostgreSQL"
+        tech: ["Kotlin", "PHP", "PostgreSQL"]
     },
     {
         title: "Junior Web Developer",
         company: "Pharmaceutical Product Development",
-        date: "(Nov. 2022 - Oct. 2024)",
+        date: "(Jan. 2020 - Jul. 2021)",
         description: "Developed features for internal web app",
-        tech: "JQuery, ReactJS, Laravel, MySQL"
+        tech: ["ReactJS", "JQuery", "Laravel", "MySQL"]
     },
 ])
 
