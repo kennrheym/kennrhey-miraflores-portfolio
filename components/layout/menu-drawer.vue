@@ -14,7 +14,9 @@ const isOpen = defineModel('isOpen', {
                 <div id="container--icon-menu" class="clickable" @click="isOpen=false">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
+                <div style="margin-left: 6px;">KennM</div>
             </div>
+            <!-- <div class="divider"></div> -->
         </div>
         <div  v-if="isOpen" class="overlay">
         </div>
@@ -23,11 +25,18 @@ const isOpen = defineModel('isOpen', {
 
 <style lang='scss' scoped>
 
+.divider {
+    width: 100%;
+    background-color: white;
+    height: 0.5px;
+}
+
 #top-row {
     @include main.flex--all-centered; 
     justify-content: flex-start;
     height: 56px;
     padding-inline: 16px;
+    border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.15);
 }
 
 #container--icon-menu {
@@ -50,7 +59,7 @@ const isOpen = defineModel('isOpen', {
   color: #fff;
   transition: left 0.2s ease;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 10000;
+  z-index: 1001;
 }
 
 .drawer--open {
