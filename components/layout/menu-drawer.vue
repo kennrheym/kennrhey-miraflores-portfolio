@@ -16,9 +16,16 @@ const isOpen = defineModel('isOpen', {
                 </div>
                 <div style="margin-left: 6px;">KennM</div>
             </div>
-            <div class="menu-option clickable">
+            <div class="menu-option clickable" style="position: relative;">
                 <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">
                 My components
+                <ul class="sub-menu">
+                    <li class="sub-menu-option" style="width: 200px;">Table</li>
+                    <li class="sub-menu-option">Table</li>
+                    <li class="sub-menu-option">Table</li>
+                    <li class="sub-menu-option">Table</li>
+                    <li class="sub-menu-option">Table</li>
+                </ul>
             </div>
             <div class="divider"></div>
         </div>
@@ -29,14 +36,41 @@ const isOpen = defineModel('isOpen', {
 
 <style lang='scss' scoped>
 
+.sub-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    background-color: #333;
+}
+.sub-menu-option {
+    @include main.flex--all-centered; 
+    height: 56px;
+    // background-color: transparent;
+    border-radius: 5px;
+    &:hover {
+        color: #ace5cb;
+        background-color: rgba($color: #EFEFF1, $alpha: 0.15);
+    }
+    border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.1) ;
+}
+
 .menu-option {
     @include main.flex--all-centered; 
     justify-content: flex-start;
     padding-left: 24px;
     height: 56px;
+    & ul {
+        display: none;
+    }
     &:hover {
         color: #ace5cb;
         background-color: rgba($color: #EFEFF1, $alpha: 0.15);
+        & ul {
+            display: block;
+        }
     }
 }
 
