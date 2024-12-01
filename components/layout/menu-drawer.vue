@@ -16,7 +16,11 @@ const isOpen = defineModel('isOpen', {
                 </div>
                 <div style="margin-left: 6px;">KennM</div>
             </div>
-            <!-- <div class="divider"></div> -->
+            <div class="menu-option clickable">
+                <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">
+                My components
+            </div>
+            <div class="divider"></div>
         </div>
         <div  v-if="isOpen" class="overlay">
         </div>
@@ -25,10 +29,22 @@ const isOpen = defineModel('isOpen', {
 
 <style lang='scss' scoped>
 
+.menu-option {
+    @include main.flex--all-centered; 
+    justify-content: flex-start;
+    padding-left: 24px;
+    height: 56px;
+    &:hover {
+        color: #ace5cb;
+        background-color: rgba($color: #EFEFF1, $alpha: 0.15);
+    }
+}
+
 .divider {
     width: 100%;
     background-color: white;
     height: 0.5px;
+    opacity: 0.15;
 }
 
 #top-row {
