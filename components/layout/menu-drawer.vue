@@ -19,13 +19,13 @@ const isOpen = defineModel('isOpen', {
             <div class="menu-option clickable" style="position: relative;">
                 <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">
                 My components
-                <ul class="sub-menu">
+                <!-- <ul class="sub-menu">
                     <li class="sub-menu-option" style="width: 200px;">Table</li>
                     <li class="sub-menu-option">Table</li>
                     <li class="sub-menu-option">Table</li>
                     <li class="sub-menu-option">Table</li>
                     <li class="sub-menu-option">Table</li>
-                </ul>
+                </ul> -->
             </div>
             <div class="divider"></div>
         </div>
@@ -48,7 +48,6 @@ const isOpen = defineModel('isOpen', {
 .sub-menu-option {
     @include main.flex--all-centered; 
     height: 56px;
-    // background-color: transparent;
     border-radius: 5px;
     &:hover {
         color: #ace5cb;
