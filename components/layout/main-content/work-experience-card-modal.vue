@@ -1,9 +1,16 @@
 <script setup lang='ts'>
 import modal from '~/components/ui/custom/common/modal.vue';
+import type { ICardData } from '../main-content.vue';
 
 const isCardModalVisible = defineModel('isCardModalVisible', {
     type: Boolean,
     default: false,
+    required: true
+})
+
+const cardData = defineModel('cardData', {
+    type: Object as PropType<ICardData>,
+    default: {},
     required: true
 })
 
@@ -19,19 +26,14 @@ const isTechDetailsCollapsed = ref(true)
                     <div class="content-container">
                         <div class="content-header"> 
                             <div class="container--icon-arrow clickable" @click="isContributionDetailsCollapsed=!isContributionDetailsCollapsed">
-                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : isContributionDetailsCollapsed}"/>
+                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : !isContributionDetailsCollapsed}"/>
                                 <!-- <img v-show="isContributionDetailsCollapsed" src="/assets/svg/icon--down-arrow.svg" /> -->
                             </div>
-                            Responsibilities / Contributions:
+                            Contributions
                         </div>
                         <transition name="fade">
                             <div v-if="!isContributionDetailsCollapsed" class="content-body">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                                <div v-for="contribution in cardData.contribution" style="padding-left: 10px; margin-bottom: 6px;">{{ contribution }}</div>
                             </div>
                         </transition>
                     </div>
@@ -39,18 +41,13 @@ const isTechDetailsCollapsed = ref(true)
                     <div class="content-container">
                         <div class="content-header"> 
                             <div class="container--icon-arrow clickable"  @click="isTechDetailsCollapsed=!isTechDetailsCollapsed">
-                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : isTechDetailsCollapsed}"/>
+                                <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : !isTechDetailsCollapsed}"/>
                             </div>
-                            Tech Used:
+                            Tech Used
                         </div>
                         <transition name="fade">
                             <div v-if="!isTechDetailsCollapsed" class="content-body">
-                                <div>Test</div>
-                                <div>Test</div>
-                                <div>Test</div>
-                                <div>Test</div>
-                                <div>Test</div>
-                                <div>Test</div>
+                                <div v-for="tech in cardData.tech" style="padding-left: 10px; margin-bottom: 6px;">{{ tech }}</div>
                             </div>
                         </transition>
 
@@ -75,7 +72,7 @@ const isTechDetailsCollapsed = ref(true)
     .modal-content {
         & * {
             color: main.$app--font-color--black;
-            font-weight: 600;
+            font-weight: 400;
         }
         & ul li {
             font-size: 14px;
@@ -92,7 +89,7 @@ const isTechDetailsCollapsed = ref(true)
         border-radius: 6px;
         background-color: #fcfffe;
         border: 0.5px solid #fcfffe;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .container--icon-arrow {

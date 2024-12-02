@@ -6,12 +6,13 @@ const activeCardIndex = ref(0)
 const cardTitle =  ref("Work Experience")
 const isCardModalVisible = ref(false)
 
-interface ICardData {
+export interface ICardData {
     title: String,
     description: String,
     company: String,
     date: String,
     tech: Array<String>
+    contribution: Array<String>
 }
 
 const cardData: Ref<Array<ICardData>> = ref([
@@ -20,21 +21,38 @@ const cardData: Ref<Array<ICardData>> = ref([
         company: "Daelibs Workforce Guidance (Australia - remote)",
         date: "(Nov. 2022 - Oct. 2024)",
         description: "Designed and implemented front and backend features/pages for IoT Web App",
-        tech: ["VueJS", "JQuery", "Django", "PostgreSQL"]
+        contribution: [
+            "CSV and PDF Exports using ReportLab",
+            "Implemented Maps Javascript API for Features",
+            "Transition JQuery pages to Vue 3 + Typescript",
+            "Created global components using Vue 3 + Typescript",
+            "APIs for mobile app",
+            "Wrote unit test and coverage for methods and APIs",
+            "Wrote documentations for pages/features and components",
+            "Created website for new clients",
+            "Designed and implemented backend and database (procedures, triggers, etc.) for old/new features",
+        ],
+        tech: ["JQuery, Vue 3, Typescript", "Django, Python", "PostgreSQL","ReportLab", "Maps for Javascript", "Figma", "Jira"]
     },
     {
         title: "Full-stack Mobile Developer",
         company: "Acamp via Miller Development (Sweden - remote)",
         date: "(Jul. 2021 - Nov. 2022)",
         description: "Implemented features for Acamp and Stellplatz Android Apps",
-        tech: ["Kotlin", "PHP", "PostgreSQL"]
+        tech: ["Kotlin", "PHP", "PostgreSQL"],
+        contribution: [
+
+        ],
     },
     {
         title: "Junior Web Developer",
         company: "Pharmaceutical Product Development (US - remote)",
         date: "(Jan. 2020 - Jul. 2021)",
         description: "Developed features for internal web app",
-        tech: ["ReactJS", "JQuery", "Laravel", "MySQL"]
+        tech: ["ReactJS", "JQuery", "Laravel", "MySQL"],
+        contribution: [
+
+        ],
     },
 ])
 
@@ -43,6 +61,10 @@ const carrouselDataCount = ref(cardData.value.length)
 const openCardModal = () => {
     isCardModalVisible.value = true
 }
+
+const selectedWorkExperienceData = computed( () => {
+    return cardData.value[activeCardIndex.value]
+})
 
 </script>
 
@@ -82,15 +104,10 @@ const openCardModal = () => {
                                 <line x1="7" y1="17" x2="17" y2="17"/>
                             </svg>
                         </div>
-
-                        <!-- <div style="margin-top: 20px; font-weight: 400;"> 
-                            <div> {{ cardData[activeCardIndex].description }} </div>
-                            <div style="margin-top: 5px; font-weight: 400;"> Tech used: {{ `${cardData[activeCardIndex].tech}` }}</div>
-                        </div> -->
                     </div>
                 </template>
             </carrousel>
-            <work-experience-card-modal v-model:is-card-modal-visible="isCardModalVisible">
+            <work-experience-card-modal v-model:is-card-modal-visible="isCardModalVisible" v-model:card-data="selectedWorkExperienceData">
             </work-experience-card-modal>
         </div>
 
