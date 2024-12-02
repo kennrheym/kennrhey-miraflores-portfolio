@@ -39,19 +39,26 @@ const cardData: Ref<Array<ICardData>> = ref([
         company: "Acamp via Miller Development (Sweden - remote)",
         date: "(Jul. 2021 - Nov. 2022)",
         description: "Implemented features for Acamp and Stellplatz Android Apps",
-        tech: ["Kotlin", "PHP", "PostgreSQL"],
         contribution: [
-
+            "Custom advertisement feature",
+            "Used firebase to monitor engagement metrics",
+            "Implemented map features for kotlin-android app (Acamp)",
+            "Fixes/transition features for transition mobile app (Stellplatz)",
+            "Backend fixes for stellplatz app"
         ],
+        tech: ["Kotlin", "PHP", "PostgreSQL", "Firebase"],
     },
     {
         title: "Junior Web Developer",
         company: "Pharmaceutical Product Development (US - remote)",
         date: "(Jan. 2020 - Jul. 2021)",
         description: "Developed features for internal web app",
-        tech: ["ReactJS", "JQuery", "Laravel", "MySQL"],
+        tech: ["JQuery, ReactJS", "PHP, Laravel", "MySQL", "Docker"],
         contribution: [
-
+            "Database management, outliers fixes",
+            "APIs for internal app",
+            "Email editor for internal app",
+            "Designed and implemented backend and database (procedures, triggers, etc.) for features"
         ],
     },
 ])
