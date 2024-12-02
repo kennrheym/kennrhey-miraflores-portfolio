@@ -13,9 +13,17 @@ const cardData = defineModel('cardData', {
     default: {},
     required: true
 })
-
 const isContributionDetailsCollapsed = ref(true)
 const isTechDetailsCollapsed = ref(true)
+
+watch(isCardModalVisible, (newValue) => {
+    if (!newValue) {
+        isContributionDetailsCollapsed.value = true
+        isTechDetailsCollapsed.value = true
+    }
+})
+
+
 
 </script>
 <template>
@@ -27,7 +35,6 @@ const isTechDetailsCollapsed = ref(true)
                         <div class="content-header"> 
                             <div class="container--icon-arrow clickable" @click="isContributionDetailsCollapsed=!isContributionDetailsCollapsed">
                                 <img src="/assets/svg/icon--up-arrow.svg" :class="{'img--inverted' : !isContributionDetailsCollapsed}"/>
-                                <!-- <img v-show="isContributionDetailsCollapsed" src="/assets/svg/icon--down-arrow.svg" /> -->
                             </div>
                             Contributions
                         </div>
