@@ -46,7 +46,7 @@ const cardData: Ref<Array<ICardData>> = ref([
             "Fixes/transition features for transition mobile app (Stellplatz)",
             "Backend fixes for stellplatz app"
         ],
-        tech: ["Kotlin", "PHP", "PostgreSQL", "Firebase"],
+        tech: ["Kotlin", "PHP", "PostgreSQL", "Firebase", "Jira", "Figma"],
     },
     {
         title: "Junior Web Developer",
