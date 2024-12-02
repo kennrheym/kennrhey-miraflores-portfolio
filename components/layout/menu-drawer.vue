@@ -5,11 +5,19 @@ const isOpen = defineModel('isOpen', {
     required: true
 })
 
+const modalContentRef: Ref<HTMLDivElement|null> = ref(null)
+
+const handleModalClick = (event: MouseEvent) => {
+    if (modalContentRef.value && !modalContentRef.value.contains(event.target as Node)) {
+        isOpen.value = false
+    } 
+}
+
 </script>
 
 <template>
     <div>
-        <div class="drawer" :class="{'drawer--open': isOpen }">
+        <div class="drawer" :class="{'drawer--open': isOpen }" ref="modalContentRef">
             <div id="top-row">
                 <div id="container--icon-menu" class="clickable" @click="isOpen=false">
                     <img src="/assets/svg/icon--menu.svg" />
@@ -19,17 +27,10 @@ const isOpen = defineModel('isOpen', {
             <div class="menu-option clickable" style="position: relative;">
                 <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">
                 My components
-                <!-- <ul class="sub-menu">
-                    <li class="sub-menu-option" style="width: 200px;">Table</li>
-                    <li class="sub-menu-option">Table</li>
-                    <li class="sub-menu-option">Table</li>
-                    <li class="sub-menu-option">Table</li>
-                    <li class="sub-menu-option">Table</li>
-                </ul> -->
             </div>
             <div class="divider"></div>
         </div>
-        <div  v-if="isOpen" class="overlay">
+        <div  v-if="isOpen" class="overlay" @click="handleModalClick">
         </div>
     </div>
 </template>
