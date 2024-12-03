@@ -13,12 +13,12 @@ const cardData = defineModel('cardData', {
     default: {},
     required: true
 })
-const isContributionDetailsCollapsed = ref(true)
+const isContributionDetailsCollapsed = ref(false)
 const isTechDetailsCollapsed = ref(true)
 
 watch(isCardModalVisible, (newValue) => {
     if (!newValue) {
-        isContributionDetailsCollapsed.value = true
+        isContributionDetailsCollapsed.value = false
         isTechDetailsCollapsed.value = true
     }
 })

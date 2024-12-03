@@ -1,9 +1,18 @@
 <script setup lang='ts'>
+import { ScreenEnum } from '../enums/common-enum';
+
+
 const isOpen = defineModel('isOpen', {
     type: Boolean,
     default: false,
     required: true
 })
+
+// const selectedScreen = defineModel('selectedScreen', {
+//     type: Boolean,
+//     default: false,
+//     required: true
+// })
 
 const modalContentRef: Ref<HTMLDivElement|null> = ref(null)
 
@@ -12,6 +21,13 @@ const handleModalClick = (event: MouseEvent) => {
         isOpen.value = false
     } 
 }
+
+const setActiveScreen = (selectedScreen: ScreenEnum) => {
+    activeScreen.value = selectedScreen
+    isOpen.value = false
+}
+
+const activeScreen: Ref<ScreenEnum> = useState('activeScreen')
 
 </script>
 
@@ -22,9 +38,9 @@ const handleModalClick = (event: MouseEvent) => {
                 <div id="container--icon-menu" class="clickable" @click="isOpen=false">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
-                <div style="margin-left: 6px;">KennM</div>
+                <div class="logo clickable" style="margin-left: 6px;" @click="setActiveScreen(ScreenEnum.MAIN_CONTENT)">KennM</div>
             </div>
-            <div class="menu-option clickable" style="position: relative;">
+            <div class="menu-option clickable" style="position: relative;" @click="setActiveScreen(ScreenEnum.COMPONENT_SCREEN)">
                 <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">
                 My components
             </div>
@@ -36,6 +52,12 @@ const handleModalClick = (event: MouseEvent) => {
 </template>
 
 <style lang='scss' scoped>
+
+.logo {
+    &:hover {
+        color: main.$app--color--green;
+    }
+}
 
 .sub-menu {
     position: absolute;

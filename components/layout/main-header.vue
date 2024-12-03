@@ -1,16 +1,20 @@
 <script setup lang="ts">
-// import { ref } from 'vue';
+import { ScreenEnum } from '../enums/common-enum';
 import ColorThemeToggle from '../ui/custom/color-theme-toggle.vue';
 import MenuDrawer from './menu-drawer.vue';
 
-enum EColorTheme {
-    LIGHT,
-    DARK
-}
+// enum EColorTheme {
+//     LIGHT,
+//     DARK
+// }
+// const colorTheme = ref("")
 
 const isMenuOpen = ref(false)
+const activeScreen: Ref<ScreenEnum> = useState('activeScreen')
+const setActiveScreen = () => {
+    activeScreen.value = ScreenEnum.MAIN_CONTENT
+}
 
-const colorTheme = ref("")
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const colorTheme = ref("")
                 <div id="container--icon-menu" class="clickable" @click="isMenuOpen=true">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
-                <div style="margin-left: 6px;">
+                <div class="logo clickable" style="margin-left: 6px;" @click="setActiveScreen">
                     KennM
                 </div>
             </div>
@@ -34,6 +38,13 @@ const colorTheme = ref("")
 </template>
 
 <style scoped lang="scss">
+
+    .logo {
+        &:hover {
+            color: main.$app--color--green;
+        }
+    }
+
     #header--start {
         @include main.flex--all-centered; 
     }

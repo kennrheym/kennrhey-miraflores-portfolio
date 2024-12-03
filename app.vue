@@ -2,6 +2,10 @@
 import FixedMainHeader from '@/components/layout/main-header.vue'
 import MainContent from './components/layout/main-content.vue';
 import MainFooter from './components/layout/main-footer.vue';
+import MyComponentScreen from './components/layout/my-component-screen.vue';
+import { ScreenEnum } from './components/enums/common-enum';
+
+const activeScreen =  useState('activeScreen', () => ScreenEnum.MAIN_CONTENT)
 </script>
 
 <template>
@@ -10,7 +14,8 @@ import MainFooter from './components/layout/main-footer.vue';
     <main style="padding-inline: 16px; justify-content: center;">
       <div class="flex--all-centered" style="margin-top: 56px;">
         <div style="padding-top: 20px;">
-          <main-content></main-content>
+          <my-component-screen v-if="activeScreen==ScreenEnum.COMPONENT_SCREEN"/>
+          <main-content v-else />
         </div>
       </div>
     </main>

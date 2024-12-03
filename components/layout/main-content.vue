@@ -32,7 +32,7 @@ const cardData: Ref<Array<ICardData>> = ref([
             "Created website for new clients",
             "Designed and implemented backend and database (procedures, triggers, etc.) for old/new features",
         ],
-        tech: ["JQuery, Vue 3, Typescript", "Django, Python", "PostgreSQL","ReportLab", "Maps for Javascript", "Figma", "Jira"]
+        tech: ["JQuery, Vue 3, Typescript", "Django, Python", "PostgreSQL","ReportLab", "Maps for Javascript", "Figma", "Jira", "Gitlab"]
     },
     {
         title: "Full-stack Mobile Developer",
@@ -44,21 +44,22 @@ const cardData: Ref<Array<ICardData>> = ref([
             "Used firebase to monitor engagement metrics",
             "Implemented map features for kotlin-android app (Acamp)",
             "Fixes/transition features for transition mobile app (Stellplatz)",
+            "App Review/Rating features",
             "Backend fixes for stellplatz app"
         ],
-        tech: ["Kotlin", "PHP", "PostgreSQL", "Firebase", "Jira", "Figma"],
+        tech: ["Kotlin", "PHP", "PostgreSQL", "Firebase", "Jira", "Figma", "Github"],
     },
     {
         title: "Junior Web Developer",
         company: "Pharmaceutical Product Development (US - remote)",
         date: "(Jan. 2020 - Jul. 2021)",
         description: "Developed features for internal web app",
-        tech: ["JQuery, ReactJS", "PHP, Laravel", "MySQL", "Docker"],
+        tech: ["JQuery, ReactJS", "PHP, Laravel", "MySQL", "Docker", "Github"],
         contribution: [
             "Database management, outliers fixes",
             "APIs for internal app",
             "Email editor for internal app",
-            "Designed and implemented backend and database (procedures, triggers, etc.) for features"
+            "Designed and implemented backend and database schema (procedures, triggers, etc.) for features"
         ],
     },
 ])
