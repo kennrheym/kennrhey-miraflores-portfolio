@@ -19,7 +19,7 @@ const setActiveScreen = () => {
 
 <template>
     <header class="fixed--top" style="width: 100%;">
-        <div style="justify-content: space-between; padding-inline: 16px;">
+        <div class="header-container" style="justify-content: space-between; padding-inline: 16px;">
             <div id="header--start">
                 <div id="container--icon-menu" class="clickable" @click="isMenuOpen=true">
                     <img src="/assets/svg/icon--menu.svg" />
@@ -29,11 +29,10 @@ const setActiveScreen = () => {
                 </div>
             </div>
             <div>
-                <color-theme-toggle>
-                </color-theme-toggle>
+                <color-theme-toggle />
             </div>
         </div>
-        <menu-drawer v-model:is-open="isMenuOpen"></menu-drawer>
+        <menu-drawer v-model:is-open="isMenuOpen" />
     </header>
 </template>
 
@@ -69,10 +68,11 @@ const setActiveScreen = () => {
         background-color: main.$app-background--black;
         height: 56px !important;
         box-shadow: 0.1px 0.1px #e5dede;
-        & > div {
-            height: 40px;
+    }
+
+    .header-container {
+        height: 40px;
             @include main.flex--all-centered; 
             padding: 8px;
-        }
     }
 </style>
