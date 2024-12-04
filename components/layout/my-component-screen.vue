@@ -8,36 +8,14 @@
                 <div class="component-label-container"> Button </div>
                 <div class="component-label-container"> Carrousel</div>
                 <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Table</div>
                 <div class="component-label-container"> Dropdown</div>
+                <div class="component-label-container"> Divider</div>
+                <div class="component-label-container"> Input </div>
                 <div class="component-label-container"> Navigation</div>
                 <div class="component-label-container"> Slider</div>
+                <div class="component-label-container"> Table</div>
+                <div class="component-label-container"> Toggle</div>
 
-                <div class="component-label-container"> Button </div>
-                <div class="component-label-container"> Carrousel</div>
-                <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Table</div>
-                <div class="component-label-container"> Dropdown</div>
-                <div class="component-label-container"> Navigation</div>
-                <div class="component-label-container"> Slider</div>                <div class="component-label-container"> Button </div>
-                <div class="component-label-container"> Carrousel</div>
-                <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Table</div>
-                <div class="component-label-container"> Dropdown</div>
-                <div class="component-label-container"> Navigation</div>
-                <div class="component-label-container"> Slider</div>                <div class="component-label-container"> Button </div>
-                <div class="component-label-container"> Carrousel</div>
-                <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Table</div>
-                <div class="component-label-container"> Dropdown</div>
-                <div class="component-label-container"> Navigation</div>
-                <div class="component-label-container"> Slider</div>                <div class="component-label-container"> Button </div>
-                <div class="component-label-container"> Carrousel</div>
-                <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Table</div>
-                <div class="component-label-container"> Dropdown</div>
-                <div class="component-label-container"> Navigation</div>
-                <div class="component-label-container"> Slider</div>
             </div>
             <div id="component-display-container">
                 Test
@@ -74,7 +52,7 @@
         flex-grow: 1;
         height: 100%;
         border-left: 1.5px solid rgba($color: #FFF, $alpha: 0.1);
-        margin-left: 10px;
+        margin-left: 12px;
     }
 
     .component-label-container {
@@ -88,7 +66,7 @@
         &:hover {
             border-left: 1px solid rgba($color: main.$app--color--green, $alpha: 1);
             border-radius: 0px 6px 6px 0px ;
-            background-color: rgba($color: #3d5b3f, $alpha: 0.15);
+            background-color: rgba($color: #3d5b3f, $alpha: 0.2);
         }
     }
 </style>
