@@ -4,7 +4,8 @@
 <template>
     <div id="screen-container">
             <div id="component-selection-container">
-            
+                <div id="selection-title" class="clickable"> My Components </div>
+
                 <div class="component-label-container"> Button </div>
                 <div class="component-label-container"> Carrousel</div>
                 <div class="component-label-container"> Card</div>
@@ -39,10 +40,23 @@
         width: 200px;
         height: calc(100vh - 94px);
         border-left: 1.5px solid rgba($color: #FFF, $alpha: 0.1);
-        margin-left: 20px;
+        margin-left: 2px;
         overflow: auto;
+        // padding-right: 12px;
+
         ::-webkit-scrollbar {
             width: 9px;
+        }
+    }
+
+    #selection-title {
+        font-size: 16px; 
+        padding-left: 20px; 
+        padding-top: 20px; 
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.1);
+        &:hover {
+            color: main.$app--color--green;
         }
     }
     
@@ -52,7 +66,7 @@
         flex-grow: 1;
         height: 100%;
         border-left: 1.5px solid rgba($color: #FFF, $alpha: 0.1);
-        margin-left: 12px;
+        // margin-left: 12px;
     }
 
     .component-label-container {
@@ -62,6 +76,7 @@
         flex-grow: 1;
         height: 30px;
         margin-block: 5px;
+        margin-right: 10px;
         cursor: pointer;
         &:hover {
             border-left: 1px solid rgba($color: main.$app--color--green, $alpha: 1);
