@@ -21,6 +21,8 @@ import AppButton from '~/components/ui/custom/common/button.vue';
         background: white;
         border-radius: 5px;
         margin: 10px;
+        box-shadow: 3px 2px 4px 0px #121212;
+
     }
 
     #button-group {

@@ -38,7 +38,7 @@ const activeScreen: Ref<ScreenEnum> = useState('activeScreen')
                 <div id="container--icon-menu" class="clickable" @click="isOpen=false">
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
-                <div class="logo clickable" style="margin-left: 6px;" @click="setActiveScreen(ScreenEnum.MAIN_CONTENT)">KennM</div>
+                <div class="logo clickable" style="margin-left: 6px;" @click="setActiveScreen(ScreenEnum.MAIN_CONTENT)">Home</div>
             </div>
             <div class="menu-option clickable" style="position: relative;" @click="setActiveScreen(ScreenEnum.COMPONENT_SCREEN)">
                 <img src="/assets/png/tech/CSS3.png" style="height: 24px; width: 24px; margin-right: 10px;">

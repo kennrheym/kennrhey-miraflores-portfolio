@@ -25,7 +25,7 @@ const setActiveScreen = () => {
                     <img src="/assets/svg/icon--menu.svg" />
                 </div>
                 <div class="logo clickable" style="margin-left: 6px;" @click="setActiveScreen">
-                    KennM
+                    Home
                 </div>
             </div>
             <div>
@@ -65,7 +65,7 @@ const setActiveScreen = () => {
 
     header {
         color: white;
-        background-color: main.$app-background--black;
+        background-color: main.$app--background--black;
         height: 56px !important;
         box-shadow: 0.1px 0.1px #e5dede;
     }

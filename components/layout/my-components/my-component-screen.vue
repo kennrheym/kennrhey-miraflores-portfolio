@@ -1,27 +1,60 @@
 <script setup lang='ts'>
 import AllComponents from './all-components.vue';
+import ButtonGroup from './button-group.vue';
+
+enum ComponentEnum {
+    All = 'all',
+    Button = 'button',
+    Carrousel = 'carrousel',
+    Card = 'card',
+    Divider = 'divider',
+    Dropdown = 'dropdown',
+    Drawer = 'drawer',
+    Input = 'input',
+    Loader = 'loader',
+    Navigation = 'navigation',
+    PopUp = 'popup',
+    Slider = 'slider',
+    Table = 'table',
+    Toggle = 'toggle'
+}
+
+const currentComponentScreen = ref(ComponentEnum.All)
+const setCurrentComponentScreen  = (screen: ComponentEnum) => {
+    currentComponentScreen.value = screen
+}
 </script>
 
 <template>
     <div id="screen-container">
-            <div id="component-selection-container">
-                <div id="selection-title" class="clickable"> My Components </div>
+        <div id="component-selection-container">
+            <div id="selection-title" class="clickable" @click="setCurrentComponentScreen(ComponentEnum.All)">  My Components </div>
 
-                <div class="component-label-container"> Button </div>
-                <div class="component-label-container"> Carrousel</div>
-                <div class="component-label-container"> Card</div>
-                <div class="component-label-container"> Dropdown</div>
-                <div class="component-label-container"> Divider</div>
-                <div class="component-label-container"> Input </div>
-                <div class="component-label-container"> Navigation</div>
-                <div class="component-label-container"> Slider</div>
-                <div class="component-label-container"> Table</div>
-                <div class="component-label-container"> Toggle</div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Button)">     Button      </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Carrousel)">  Carrousel   </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Card)">       Card        </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Divider)">    Divider     </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Drawer)">   Drawer    </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Dropdown)">   Dropdown    </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Input)">      Input       </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Loader)">     Loader      </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Navigation)"> Navigation  </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.PopUp)">      Pop-up      </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Slider)">     Slider      </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Table)">      Table       </div>
+            <div class="component-label-container" @click="setCurrentComponentScreen(ComponentEnum.Toggle)">     Toggle      </div>
 
+        </div>
+        <div id="component-display-container">
+            <div>
+                <!-- <Transition> -->
+                <all-components v-if="currentComponentScreen==ComponentEnum.All"></all-components>
+                <button-group v-else-if="currentComponentScreen==ComponentEnum.Button"></button-group>
+                <div v-else></div>
+                <!-- </Transition> -->
             </div>
-            <div id="component-display-container">
-                <all-components></all-components>
-            </div>
+
+        </div>
     </div>
 </template>
 
@@ -68,6 +101,13 @@ import AllComponents from './all-components.vue';
         height: 100%;
         border-left: 1.5px solid rgba($color: #FFF, $alpha: 0.1);
         overflow: auto;
+        & > div {
+            @include main.flex--all-centered;
+            height: 96%;
+            width: 98%;;
+            background-color: rgba($color: main.$app--background--black, $alpha: 0.1);
+            border-radius: 10px;
+        }
     }
 
     .component-label-container {

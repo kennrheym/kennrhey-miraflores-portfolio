@@ -41,7 +41,7 @@
 <style lang='scss' scoped>
     footer {
         @include main.flex--all-centered;
-        background-color: main.$app-background--black;
+        background-color: main.$app--background--black;
         opacity: 0.9;
         width: 100%;
         height: 40px; 
