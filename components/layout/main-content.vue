@@ -142,7 +142,7 @@ const selectedWorkExperienceData = computed( () => {
         background-color: aliceblue;
         transition: background-color 0.3s;
         &:hover {
-            background-color: main.$app--color--blue;
+            background-color: main.$app--color--light-blue;
             & svg {
                 stroke: #FFF;
                 transition: stroke 0.4s;

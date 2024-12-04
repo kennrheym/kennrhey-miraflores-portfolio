@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import AllComponents from './all-components.vue';
 </script>
 
 <template>
@@ -19,7 +20,7 @@
 
             </div>
             <div id="component-display-container">
-                Test
+                <all-components></all-components>
             </div>
     </div>
 </template>
@@ -66,7 +67,7 @@
         flex-grow: 1;
         height: 100%;
         border-left: 1.5px solid rgba($color: #FFF, $alpha: 0.1);
-        // margin-left: 12px;
+        overflow: auto;
     }
 
     .component-label-container {
