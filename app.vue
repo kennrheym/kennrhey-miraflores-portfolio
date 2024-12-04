@@ -2,7 +2,7 @@
 import FixedMainHeader from '@/components/layout/main-header.vue'
 import MainContent from './components/layout/main-content.vue';
 import MainFooter from './components/layout/main-footer.vue';
-import MyComponentScreen from './components/layout/my-component-screen.vue';
+import MyComponentScreen from './components/layout/my-components/my-component-screen.vue';
 import { ScreenEnum } from './components/enums/common-enum';
 
 const activeScreen =  useState('activeScreen', () => ScreenEnum.MAIN_CONTENT)
