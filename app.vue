@@ -12,14 +12,14 @@ const activeScreen =  useState('activeScreen', () => ScreenEnum.MAIN_CONTENT)
   <div>
     <fixed-main-header></fixed-main-header>
     <main style="justify-content: center;">
-      <transition name="fade">
+      <!-- <transition name="fade"> -->
         <my-component-screen v-if="activeScreen==ScreenEnum.COMPONENT_SCREEN"/>
         <div  v-else class="flex--all-centered" style="margin-top: 56px;">
           <div style="padding-top: 20px;">
             <main-content/>
           </div>
         </div>
-      </transition>
+      <!-- </transition> -->
     </main>
     <main-footer></main-footer>
   </div>
