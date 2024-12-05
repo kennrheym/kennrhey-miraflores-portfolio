@@ -5,7 +5,7 @@ const textInput = ref("")
 
 <template>
     <div class="component-group-container">
-        <div class="title"> Input </div>
+        <div class="title"> Text Input </div>
         <div id="component-group">
             <div style="width: 300px;">
                 <text-input :title="'Title'" :show-visibility-icon="true" v-model:input-text="textInput" :text-limit="40"></text-input>
