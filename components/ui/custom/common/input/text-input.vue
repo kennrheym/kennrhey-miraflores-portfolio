@@ -113,6 +113,8 @@ const focusChanged = (isFocused: boolean) => {
         background: white;
         margin-left: 8px;
         padding-inline: 2px;
+        max-width: 100px;
+        overflow: hidden;
     }
 
     .text-counter {
