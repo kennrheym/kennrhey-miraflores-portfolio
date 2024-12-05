@@ -46,7 +46,7 @@ const setCurrentComponentScreen  = (screen: ComponentEnum) => {
 
         </div>
         <div id="component-display-container">
-            <div>
+            <div style="height: inherit; overflow: auto; align-items: flex-start;">
                 <!-- <Transition> -->
                 <all-components v-if="currentComponentScreen==ComponentEnum.All"></all-components>
                 <button-group v-else-if="currentComponentScreen==ComponentEnum.Button"></button-group>
@@ -61,6 +61,7 @@ const setCurrentComponentScreen  = (screen: ComponentEnum) => {
 <style lang='scss' scoped>
     #screen-container{
         @include main.flex--all-centered;
+        justify-content: flex-start;
         width: 100vw;
         height: calc(100vh - 94px);
         margin-top: 16px;
