@@ -1,8 +1,5 @@
 <script setup lang='ts'>
 
-import InvisibleEyeIcon from '~/assets/svg/invisible-eye.svg'
-import VisibleEyeIcon from '~/assets/svg/visible-eye.svg'
-
 const props = defineProps({
   title: {
     type: String,
