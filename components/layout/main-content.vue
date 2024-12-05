@@ -89,10 +89,10 @@ const selectedWorkExperienceData = computed( () => {
                 </div>
                 <div style="font-size: 13px; margin-top: 5px;">
                     <div>
-                        And I'm really passionate with...
+                        I'm passionate with building front-end components
                     </div>
                     <div>
-                        Creating front-end components, and implementing business logic
+                         and implementing business logic
                     </div>   
                 </div>
             </div>

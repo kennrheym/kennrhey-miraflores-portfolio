@@ -1,12 +1,13 @@
 <script setup lang='ts'>
 import ButtonGroup from './button-group.vue';
+import InputGroup from './input-group.vue';
 </script>
 
 <template>
     <div>
 
         <button-group></button-group>
-
+        <input-group></input-group>
         <div class="component-group-container">
             <div id="input-group">
                 <div class="title"> Input </div>
