@@ -2,7 +2,6 @@
 enum VariantEnum {
     CONTAINED = 'contained',
     OUTLINED = 'outlined',
-    DISABLED = 'disabled'
 }
 const props = defineProps({
   text: {
@@ -16,6 +15,12 @@ const props = defineProps({
   }
 });
 
+const isDisabled = defineModel('isDisabled', {
+    type: Boolean,
+    default: false,
+    required: false
+})
+
 
 
 </script>
@@ -25,7 +30,9 @@ const props = defineProps({
         :class="{
             'outlined' : props.variant == VariantEnum.OUTLINED,  
             'contained' : props.variant == VariantEnum.CONTAINED,  
-            'disabled' : props.variant == VariantEnum.DISABLED,  
+            'contained-disabled': isDisabled && props.variant == VariantEnum.CONTAINED ,
+            'outlined-disabled': isDisabled && props.variant == VariantEnum.OUTLINED,
+
         }"
     >
         {{ text }}
@@ -58,9 +65,17 @@ const props = defineProps({
         }
     }
 
-    .disabled {
+    .contained-disabled {
         pointer-events: none;
         color: rgba($color: #000000, $alpha: 0.26);
         background-color: rgba($color: #000000, $alpha: 0.12);
+    }
+
+    .outlined-disabled {
+        pointer-events: none;
+        color: rgba($color: #000000, $alpha: 0.26);
+        border: 1px solid rgba($color: #000000, $alpha: 0.12);
+        background-color: #FFF;
+
     }
 </style>

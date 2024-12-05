@@ -1,14 +1,16 @@
 <script setup lang='ts'>
 import AppButton from '~/components/ui/custom/common/button.vue';
-
+const buttonDisabled = ref(true)
 </script>
 <template>
     <div class="component-group-container">
         <div class="title"> Buttons </div>
         <div id="button-group">
             <app-button :text="'CONTAINED'"></app-button>
+            <app-button :text="'CONTAINED DISABLED'" v-model:is-disabled="buttonDisabled"></app-button>
+
             <app-button :text="'OUTLINED'" :variant="'outlined'"></app-button>
-            <app-button :text="'DISABLED'" :variant="'disabled'"></app-button>
+            <app-button :text="'OUTLINED DISABLED'" :variant="'outlined'" v-model:is-disabled="buttonDisabled"></app-button>
         </div>
     </div>
 
