@@ -52,7 +52,7 @@ const activeScreen =  useState('activeScreen', () => ScreenEnum.MAIN_CONTENT)
     height: 100vh;
     // height: calc(100vh - 56px);
     background-color: transparent;
-    background: linear-gradient(0, #ebe3db, #121212);
+    background: radial-gradient(#000000, rgb(99 114 149 / 96%)); //radial-gradient(#000000, rgb(202 146 31 / 26%)); //linear-gradient(0, #ebe3db, #121212);
     & > div {
       // background-color: main.$app-dark-mode--background-color;
       background-color: transparent;
