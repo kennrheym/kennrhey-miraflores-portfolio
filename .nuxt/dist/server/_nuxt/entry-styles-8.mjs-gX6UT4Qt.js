@@ -1,0 +1,5 @@
+const mainContent_vue_vue_type_style_index_0_lang = "@media only screen and (max-width:1100px){#main-content-container{flex-direction:column!important}#main-content-container>div{margin-bottom:50px}}.details-icon{align-items:center;background-color:#f0f8ff;border-radius:20px;display:flex;height:40px;justify-content:center;transition:background-color .3s;width:40px}.details-icon:hover{background-color:#8bc5f7}.details-icon:hover svg{stroke:#fff;transition:stroke .4s}#main-content-container{align-items:center;display:flex;flex-direction:row;justify-content:center;justify-content:space-between;width:1100px}.carrousel-card{align-items:center;background-color:#d7ffed;border-radius:10px;display:flex;flex-direction:column;font-size:14px;font-weight:600;height:200px;justify-content:center;opacity:1;padding-inline:20px;text-align:center;width:400px}.carrousel-card *{color:#545459}";
+export {
+  mainContent_vue_vue_type_style_index_0_lang as default
+};
+//# sourceMappingURL=entry-styles-8.mjs-gX6UT4Qt.js.map
