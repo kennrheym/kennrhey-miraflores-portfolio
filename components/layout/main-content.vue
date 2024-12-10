@@ -3,7 +3,7 @@ import Carrousel from '../ui/custom/carrousel/carrousel.vue';
 import WorkExperienceCardModal from './main-content/work-experience-card-modal.vue';
 
 const activeCardIndex = ref(0)
-const cardTitle =  ref("Work Experience")
+const cardTitle =  ref("Professional Experience")
 const isCardModalVisible = ref(false)
 
 export interface ICardData {
